@@ -1,5 +1,9 @@
-<section>
-    <div>
-        <p ng-repeat="room in main.chatrooms">{{ room.$value }}</p>
-    </div>   
-</section>
+<div class="sidebar">
+    <div class="sidebar-header">        
+        <h1 class="sidebar-title">Bloc Chat</h1>
+        <span type="button" class="new-room" ng-click="main.addRoom(newRoom)">New Room</span>
+    </div>
+    <div class="sidebar-body" ng-repeat="room in main.rooms">
+        <p class="room-name" ng-click="main.setCurrentRoom(room)">{{ room.$value }}</p>
+    </div>
+</div>   

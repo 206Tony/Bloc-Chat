@@ -1,4 +1,4 @@
-(function () {
+(function() {
     function config($stateProvider, $locationProvider) {
         $locationProvider
             .html5Mode({
@@ -7,15 +7,21 @@
             });
         
         $stateProvider
-            .state('main',{
+            .state('main', {
+                url: '/',
+                controller: 'MainCtrl as main',
+                templateUrl: '/templates/main.html'
+            });
+        
+        $stateProvider
+            .state('modal', {
             url: '/',
-            controller: 'MainCtrl as main',
-            templateURl: '/templates/main.html'
+            controller: 'ModalCtrl as modal',
+            templateUrl: '/templates/modal.html'
         });
-    } 
+    }
 
-angular
-        .module('blocChat', ['ui.router', 'firebase'])
+    angular
+        .module('blocChat', ['ui.router', 'firebase', 'ui.bootstrap'])
         .config(config);
 })();
-
