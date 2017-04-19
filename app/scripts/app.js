@@ -13,15 +13,15 @@
                 templateUrl: '/templates/main.html'
             });
         
-        $stateProvider
+       /* $stateProvider
             .state('modal', {
             url: '/',
             controller: 'ModalCtrl as modal',
             templateUrl: '/templates/modal.html'
-        });
+        });*/
     }
 
     angular
-        .module('blocChat', ['ui.router', 'firebase', 'ui.bootstrap'])
+        .module('blocChat', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
         .config(config);
 })();

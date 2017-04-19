@@ -43,3 +43,44 @@ body {
 .sidebar .room-name:hover {
     cursor: pointer;
 }
+
+.messages {
+    position: fixed;
+    top: 20px;
+    left: 335.5px;
+    width: 80%;
+    height: 100%;
+    background-color: ghostwhite;
+    z-index: 1;
+    overflow: scroll;
+    box-sizing: content-box;
+}
+
+.messages-body {
+    padding-right: 335px;    
+}
+
+.messages-body .username {
+    font-weight: bold;
+}
+
+.messages-body .user-message {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.message-field {
+    top: 0;
+    padding-left: 335px;
+    position: fixed;
+}
+
+.message-field input.message-box {
+    box-sizing: border-box;
+}
+
+
+.message-box {
+    width: 800px;
+}
