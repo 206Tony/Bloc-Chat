@@ -3,28 +3,32 @@
 
         this.rooms = Room.rooms;
         this.currentRoom = null;
-        this.currentUser = $cookies.get('blocChatCurrentUser');
+        this.setUsername = $cookies.get('blocChatCurrentUser');
+        this.content = '';
         
-        this.addRoom = function() {
+        this.addRoom = function () {
             $uibModal.open({
                 templateUrl: '/templates/modal.html',
                 size: 'sm',
                 controller: 'ModalCtrl as modal'
             });
-        }
+        };
           
         this.setCurrentRoom = function (room) {
             this.currentRoom = room;
             this.messages = Message.getByRoomId(this.currentRoom.$id);
-        }
+        };
         
-        this.sendMessage = function() {
-            this.newMessage.roomId = this.currentRoom.$id;
-            Message.send(this.newMessage);
-        }
+        this.sendMessage = function () {
+            debugger;
+            if (this.content) {
+                Message.send(this.content, this.currentRoom.$id);
+                this.content = '';
+            }
+        };
     }
     
     angular
         .module('blocChat')
-        .controller('MainCtrl', ['Room', 'Message','$uibModal', '$cookies', MainCtrl]);
+        .controller('MainCtrl', ['Room', 'Message', '$uibModal', '$cookies', MainCtrl]);
 })();

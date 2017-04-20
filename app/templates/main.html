@@ -1,26 +1,36 @@
-<div class="sidebar">
-    <div class="sidebar-header">        
-        <h1 class="sidebar-title">Bloc Chat</h1>
-        <span type="button" class="new-room" ng-click="main.addRoom()">New Room</span>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <h1 id="main-title">Bloc Chat</h1>
     </div>
-    <div class="sidebar-body" ng-repeat="room in main.rooms">
-        <p class="room-name" ng-click="main.setCurrentRoom(room)">{{ room.$value }}</p>
-    </div>
-</div>   
+</nav>
 
-<div class="messages">
-    <div class="messages-header">
-        <h3 class="messages-title">{{ main.setCurrentRoom }}</h3>
-    </div>
+<div class="container">
+    <div class="row">
+        <div class="sidebar col-ft-3 no-float">       
+        
+            <button class="btn btn-info new-room-button" ng-click="main.addRoom()">New Room</button>
+            
+        <div class="sidebar-body" ng-repeat="room in main.rooms">
+            <p class="room-name" ng-click="main.setCurrentRoom(room)">{{ room.$value }}</p>
+        </div>
+    </div>   
+
+    <div class="messages col-rt-9">
+        <div class="messages-header" ng-show="main.currentRoom">
+            <h3>{{ main.currentRoom.$value }}</h3>
+        </div>
     
-    <div class="messages-body" ng-repeat="message in main.messages">
-        <div class="username">{{ message.username }}</div>
-        <div class="user-message">{{ message.content }}</div>
-        <div class="timestamp">{{ message.sentAt }}</div>
-    </div>
-</div>
+        <table class="table">
+            <p ng-repeat="message in main.messages">{{ message.username }}: {{ message.content }}: {{ message.sentAt }} </p>
+        </table>
 
-<div class="message-field">
-    <input type="text" name="input" placeholder="Type message here" class="message-box" ng-model="main.newMessage.content" style="width:500px;">
-    <button class="btn-new-message" type="button" ng-click="main.sendMessage()">Send Message</button>
+
+        <div class="row">
+        <div class="messages clearfix">
+            <textarea class="message-box send-box" placeholder="Type message here" ng-model="main.content"></textarea>
+            <button class="btn btn-primary send-button" type="submit" ng-click="main.sendMessage()">Send</button>
+        </div>
+        </div>
+    </div>
+    </div>
 </div>

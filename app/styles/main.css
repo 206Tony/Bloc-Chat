@@ -1,86 +1,117 @@
-html {
+html,
+body, 
+.container {
     height: 100%;
-    font-size: 100%;
+    margin: 0 auto;
 }
 
-body {
+h1 {
     background-color: white;
 }
 
-.sidebar {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 20%;
-    height: 100%;
-    background-color: lightgray;
-    z-index: 1;
-}
-
-.sidebar-header {
-    padding-left: 15px;
-    margin-bottom: 5px;
+.container {
     display: table;
     width: 100%;
+    padding: 0px;
     box-sizing: border-box;
 }
 
-.sidebar-header .new-room {
-    margin-top: 10px;
+.header {
+    background-color: lightgray;
+    height: 50px;
 }
 
-.sidebar-title {
-    display: inline-block;
-    padding-right: 20px;
+.row {
+    height: 100%;
+    display: table-row;
 }
 
-.sidebar .room-name {
-    padding-left: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.col-ft-3 {
+    padding-top: 80px;
+    background: white;
+}
+
+.col-rt-9 {
+    background-color: white;
+    border-top: 1px solid;
 } 
 
-.sidebar .room-name:hover {
-    cursor: pointer;
+.sidebar-body {
+    margin-bottom: 5px;
 }
 
-.messages {
-    position: fixed;
-    top: 20px;
-    left: 335.5px;
-    width: 80%;
-    height: 100%;
-    background-color: ghostwhite;
-    z-index: 1;
-    overflow: scroll;
-    box-sizing: content-box;
+.messages{
+    width: 100%;   
+    padding-right: 25px;
+    position: absolute;
+    bottom: 5px;
+    
 }
 
-.messages-body {
-    padding-right: 335px;    
-}
-
-.messages-body .username {
-    font-weight: bold;
-}
-
-.messages-body .user-message {
-    padding-top: 5px;
-    padding-bottom: 5px;
+.messages .send-box {
     display: inline-block;
+    height: 50px;
+    border: 1px solid;
+    width: 85%;
+    position: relative;
+    padding: 0 20px;
 }
 
-.message-field {
-    top: 0;
-    padding-left: 335px;
-    position: fixed;
+.messages .send-button {
+    width: 15%;
+    height: 50px;
+    display: inline-block;
+    border: 2px solid;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    float: right;
+    
 }
 
-.message-field input.message-box {
-    box-sizing: border-box;
+.new-room-button {
+    margin-right: 5px;
+    background-color: black;
+    
 }
 
+.btn-primary:hover {
+    background-color: black;
+}
 
-.message-box {
-    width: 800px;
+.btn-primary.focus, .btn-primary:focus {
+    background-color: black;
+}
+
+.btn-primary.active, .btn-primary:active {
+    background-color: black;
+}
+
+#username-btn {
+    background-color: red;
+}
+
+.modal {
+    text-align: center;
+    padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-content {
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
 }

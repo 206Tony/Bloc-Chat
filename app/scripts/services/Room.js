@@ -6,7 +6,6 @@
         Room.rooms = $firebaseArray(ref);
 
         Room.addRoom = function(newRoom) {
-            debugger; 
             Room.rooms.$add({ $value: newRoom }).then(function(ref) {
         })} 
         return Room;    
@@ -14,5 +13,5 @@
     
     angular
         .module('blocChat')
-        .factory('Room', ['$firebaseArray', '$uibModal', Room]);
+        .factory('Room', ['$firebaseArray', Room]);
 })();

@@ -12,13 +12,6 @@
                 controller: 'MainCtrl as main',
                 templateUrl: '/templates/main.html'
             });
-        
-       /* $stateProvider
-            .state('modal', {
-            url: '/',
-            controller: 'ModalCtrl as modal',
-            templateUrl: '/templates/modal.html'
-        });*/
     }
 
     angular
