@@ -11,7 +11,6 @@
         
         Message.send = function(newMessage, roomId) {
             var messageDate = new Date();
-            debugger;
             Message.messages.$add({
                 username: $cookies.get('blocChatCurrentUser'),
                 content: newMessage,

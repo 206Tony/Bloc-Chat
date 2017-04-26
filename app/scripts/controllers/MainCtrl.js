@@ -20,7 +20,6 @@
         };
         
         this.sendMessage = function () {
-            debugger;
             if (this.content) {
                 Message.send(this.content, this.currentRoom.$id);
                 this.content = '';
